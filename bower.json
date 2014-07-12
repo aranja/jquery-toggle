@@ -1,0 +1,15 @@
+{
+  "name": "aranja-autoscale",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aranja/aranja-autoscale",
+  "authors": [
+    "Aranja"
+  ],
+  "description": "Toggle content container height.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ]
+}

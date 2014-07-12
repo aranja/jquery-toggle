@@ -1,0 +1,6 @@
+{
+  "browser": "Google Chrome",
+  "entry": "./index.js",
+  "port": 3700,
+  "target": "./example/"
+}
