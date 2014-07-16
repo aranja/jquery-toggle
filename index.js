@@ -34,7 +34,10 @@ ExpandToggle.DEFAULTS = {
  * Initialize ExpandToggle
  */
 ExpandToggle.prototype.init = function() {
-  this.parent = this.el.parent();
+  this.parent = this.options.parent ?
+                this.el.closest(this.options.parent) :
+                this.el.parent();
+
   this.container = this.options.expandToggle ?
                    this.parent.find(this.options.expandToggle) :
                    this.el.next();

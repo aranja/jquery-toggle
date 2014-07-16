@@ -8,10 +8,28 @@
     .Toggle-content {
       overflow: hidden;
     }
+    .Parent {
+      background: #eee;
+      margin-bottom: 50px;
+    }
+    .Paragraph {
+      overflow: hidden;
+    }
+    .is-expanded .Paragraph {
+      color: red;
+    }
   </style>
 </head>
 <body>
   <h2>.ExpandToggle</h2>
+  <div class="Parent">
+    <p class="Paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate minima vitae alias consectetur hic deserunt corrupti consequatur laborum consequuntur, cum quaerat quam voluptatum sit dolore libero ab incidunt, fugiat.</p>
+    <div class="Toggle">
+    <a href="#" class="Toggle-button" data-expand-toggle=".Paragraph" data-parent=".Parent">Toggle Paragraph</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quam officiis dicta totam assumenda facere debitis delectus ea consequuntur blanditiis. Aliquam ducimus delectus aliquid a accusantium soluta, temporibus, sit dolor.</p>
+  </div>
+  </div>
+
   <div class="Toggle">
     <a href="#" class="Toggle-button" data-expand-toggle>Toggle Content</a>
     <div class="Toggle-content">
