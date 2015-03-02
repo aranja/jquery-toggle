@@ -44,7 +44,9 @@ ExpandToggle.prototype.init = function() {
 
   this.maxHeight = this.options.maxHeight || this.container.outerHeight();
 
-  this.collapse();
+  if (!this.parent.hasClass(this.options.expandedClass)) {
+    this.collapse();
+  }
   this.el.on('click.aranja', this.handleToggle.bind(this));
 };
 
