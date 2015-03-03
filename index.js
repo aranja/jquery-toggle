@@ -7,7 +7,8 @@ var $ = require('jquery');
  * @param {{
  *   expandedClass: string,
  *   height: number,
- *   maxHeight: number
+ *   maxHeight: number,
+ *   expanded: boolean
  * }} options - The options.
  */
 function ExpandToggle(el, options) {
@@ -21,13 +22,15 @@ function ExpandToggle(el, options) {
  * @type {{
  *   expandedClass: string,
  *   height: number,
- *   maxHeight: number
+ *   maxHeight: number,
+ *   expanded: boolean
  * }}
  */
 ExpandToggle.DEFAULTS = {
   expandedClass: 'is-expanded',
   height: 0,
-  maxHeight: null
+  maxHeight: null,
+  expanded: false
 };
 
 /**
@@ -44,7 +47,9 @@ ExpandToggle.prototype.init = function() {
 
   this.maxHeight = this.options.maxHeight || this.container.outerHeight();
 
-  if (!this.parent.hasClass(this.options.expandedClass)) {
+  if (this.options.expanded) {
+    this.expand();
+  } else {
     this.collapse();
   }
   this.el.on('click.aranja', this.handleToggle.bind(this));
