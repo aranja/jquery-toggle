@@ -1,6 +1,6 @@
 {
   "name": "aranja-expand-toggle",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Toggle content container height.",
   "main": "index.js",
   "browserify": {
