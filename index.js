@@ -47,6 +47,11 @@ ExpandToggle.prototype.init = function() {
 
   this.maxHeight = this.options.maxHeight || this.container.outerHeight();
 
+  if (this.options.expandedText) {
+    this.collapsedText = this.el.text();
+    this.expandedText = this.options.expandedText || this.collapsedText;
+  }
+
   if (this.options.expanded) {
     this.expand();
   } else {
@@ -62,6 +67,9 @@ ExpandToggle.prototype.collapse = function() {
   this.parent.removeClass(this.options.expandedClass);
   this.container.height(this.options.height);
   this.isExpanded = false;
+  if (this.collapsedText) {
+    this.el.html(this.collapsedText);
+  }
 };
 
 /**
@@ -71,6 +79,9 @@ ExpandToggle.prototype.expand = function() {
   this.parent.addClass(this.options.expandedClass);
   this.container.height(this.maxHeight);
   this.isExpanded = true;
+  if (this.options.expandedText) {
+    this.el.html(this.expandedText);
+  }
 };
 
 /**
